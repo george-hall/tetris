@@ -5,7 +5,6 @@ import pygame
 
 import board_class
 import graphics
-from colour_defs import *
 
 pygame.init()
 
