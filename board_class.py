@@ -20,6 +20,12 @@ class Board():
 
         self.size = [total_self_width, total_self_height]
 
+    def add_piece(self, positions):
+        new_piece = Piece(positions)
+        self.pieces.append(new_piece)
+        for p in positions:
+            self.cells[p[0]][p[1]] = 1
+
 class Piece():
 
     def __init__(self):
