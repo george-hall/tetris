@@ -19,3 +19,8 @@ class Board():
         total_self_height = combined_height_cells + combined_height_margin
 
         self.size = [total_self_width, total_self_height]
+
+class Piece():
+
+    def __init__(self):
+        self.positions = []
