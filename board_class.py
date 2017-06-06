@@ -28,5 +28,5 @@ class Board():
 
 class Piece():
 
-    def __init__(self):
-        self.positions = []
+    def __init__(self, positions):
+        self.positions = positions
