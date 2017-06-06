@@ -3,6 +3,8 @@ class Board():
     def __init__(self):
         self.num_rows = 40
         self.num_cols = 10
+        board.pieces = []
+        self.cells = [[0 for _ in xrange(self.num_cols)] for _ in xrange(self.num_rows)]
 
         self.square_width = 10
         self.square_height = 10
