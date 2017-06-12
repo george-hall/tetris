@@ -6,6 +6,19 @@ import pygame
 import board_class
 import graphics
 
+def calc_new_piece_pos(new_piece_type, board):
+    max_col = board.num_rows - 1
+    max_row = board.num_cols - 1
+
+    if new_piece_type == "STRAIGHT":
+        return [(int(max_row / 2), 0), (int(max_row / 2), 1),
+                (int(max_row / 2), 2), (int(max_row / 2), 3)]
+
+    elif new_piece_type == "SQUARE":
+        return [(int(max_row / 2), 0), (int(max_row / 2) + 1, 0),
+                (int(max_row / 2), 1), (int(max_row / 2) + 1, 1)]
+
+
 def generate_new_block(board):
     #piece_types = ["STRAIGHT", "S", "Z", "L", "J", "SQUARE", "T"]
     piece_types = ["STRAIGHT", "SQUARE"]
