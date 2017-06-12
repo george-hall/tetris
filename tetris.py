@@ -6,6 +6,14 @@ import pygame
 import board_class
 import graphics
 
+def generate_new_block(board):
+    #piece_types = ["STRAIGHT", "S", "Z", "L", "J", "SQUARE", "T"]
+    piece_types = ["STRAIGHT", "SQUARE"]
+    new_piece_type = random.choice(piece_types)
+    new_piece_pos = calc_new_piece_pos(new_piece_type, board)
+    board.add_piece(new_piece_pos)
+
+
 pygame.init()
 
 board = board_class.Board()
