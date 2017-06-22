@@ -83,7 +83,6 @@ def main():
             generate_new_block(board)
 
         (board, blocks_moved) = move_blocks_down(board)
-        blocks_moved = True
 
         graphics.draw_screen(screen, board)
         pygame.display.update()
