@@ -35,8 +35,9 @@ class Board():
 
 class Piece():
 
-    def __init__(self, positions):
+    def __init__(self, positions, piece_type):
         self.positions = positions
+        self.piece_type = piece_type
 
     def move_left(self):
         new_positions = [(p[0]-1, p[1]) for p in self.positions]
