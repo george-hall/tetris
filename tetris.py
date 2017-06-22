@@ -16,6 +16,20 @@ def blank_below(piece, board):
                 return False
     return True
 
+
+def move_blocks_down(board):
+    blocks_moved = False
+    for piece in board.pieces:
+        if blank_below(piece, board):
+            new_piece_positions = [(p[0],p[1]+1) for p in piece.positions]
+            piece.positions = new_piece_positions
+            blocks_moved = True
+
+    board.update_cells()
+
+    return (board, blocks_moved)
+
+
 def calc_new_piece_pos(new_piece_type, board):
     max_col = board.num_rows - 1
     max_row = board.num_cols - 1
