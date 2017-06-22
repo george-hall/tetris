@@ -8,11 +8,11 @@ import graphics
 
 
 def blank_below(piece, board):
-    for cell in piece.positions:
+    for pos in piece.positions:
         # Check that the position being examined does not have another position
         # from the same piece directly below
-        if (cell[1] + 1) not in [c[1] for c in piece.positions]:
-            if board.cells[cell[0]][cell[1]+1] == 1:
+        if (pos[1] + 1) not in [p[1] for p in piece.positions]:
+            if board.cells[pos[0]][pos[1]+1] == 1:
                 return False
     return True
 
