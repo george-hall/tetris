@@ -7,6 +7,28 @@ import board_class
 import graphics
 
 
+def blank_left(piece, board):
+    if any(p[0] == 0 for p in piece.positions):
+        return False
+    for pos in piece.positions:
+        if (pos[0] - 1) not in [p[0] for p in piece.positions]:
+            if board.cells[pos[0]-1][pos[1]] == 1:
+                return False
+
+    return True
+
+def blank_right(piece, board):
+    max_col_num = board.num_cols - 1
+    if any(p[0] == max_col_num for p in piece.positions):
+        return False
+    for pos in piece.positions:
+        if (pos[0] + 1) not in [p[0] for p in piece.positions]:
+            if board.cells[pos[0]+1][pos[1]] == 1:
+                return False
+
+    return True
+
+
 def blank_below(piece, board):
     if piece_at_bottom(piece, board):
         return False
