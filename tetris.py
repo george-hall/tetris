@@ -6,6 +6,16 @@ import pygame
 import board_class
 import graphics
 
+
+def blank_below(piece, board):
+    for cell in piece.positions:
+        # Check that the position being examined does not have another position
+        # from the same piece directly below
+        if (cell[1] + 1) not in [c[1] for c in piece.positions]:
+            if board.cells[cell[0]][cell[1]+1] == 1:
+                return False
+    return True
+
 def calc_new_piece_pos(new_piece_type, board):
     max_col = board.num_rows - 1
     max_row = board.num_cols - 1
