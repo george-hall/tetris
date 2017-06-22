@@ -38,7 +38,7 @@ def move_blocks_down(board):
 
     board.update_cells()
 
-    return (board, blocks_moved)
+    return blocks_moved
 
 
 def calc_new_piece_pos(new_piece_type, board):
@@ -82,7 +82,7 @@ def main():
         if blocks_moved == False:
             generate_new_block(board)
 
-        (board, blocks_moved) = move_blocks_down(board)
+        blocks_moved = move_blocks_down(board)
 
         graphics.draw_screen(screen, board)
         pygame.display.update()
