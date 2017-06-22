@@ -58,11 +58,19 @@ screen = pygame.display.set_mode(board.size)
 pygame.display.set_caption("Tetris")
 clock = pygame.time.Clock()
 
+blocks_moved = False
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
+    if blocks_moved == False:
+        generate_new_block(board)
+
+    (board, blocks_moved) = move_blocks_down(board)
+    blocks_moved = True
 
     graphics.draw_screen(screen, board)
     pygame.display.update()
