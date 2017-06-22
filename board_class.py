@@ -37,3 +37,11 @@ class Piece():
 
     def __init__(self, positions):
         self.positions = positions
+
+    def move_left(self):
+        new_positions = [(p[0]-1, p[1]) for p in self.positions]
+        self.positions = new_positions
+
+    def move_right(self):
+        new_positions = [(p[0]+1, p[1]) for p in self.positions]
+        self.positions = new_positions
