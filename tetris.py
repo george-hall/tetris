@@ -51,27 +51,32 @@ def generate_new_block(board):
     board.add_piece(new_piece_pos)
 
 
-pygame.init()
+def main():
 
-board = board_class.Board()
-screen = pygame.display.set_mode(board.size)
-pygame.display.set_caption("Tetris")
-clock = pygame.time.Clock()
+    pygame.init()
 
-blocks_moved = False
+    board = board_class.Board()
+    screen = pygame.display.set_mode(board.size)
+    pygame.display.set_caption("Tetris")
+    clock = pygame.time.Clock()
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    blocks_moved = False
 
-    if blocks_moved == False:
-        generate_new_block(board)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
-    (board, blocks_moved) = move_blocks_down(board)
-    blocks_moved = True
+        if blocks_moved == False:
+            generate_new_block(board)
 
-    graphics.draw_screen(screen, board)
-    pygame.display.update()
-    clock.tick(10)
+        (board, blocks_moved) = move_blocks_down(board)
+        blocks_moved = True
+
+        graphics.draw_screen(screen, board)
+        pygame.display.update()
+        clock.tick(10)
+
+if __name__ == "__main__":
+    main()
