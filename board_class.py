@@ -26,6 +26,13 @@ class Board():
         for p in positions:
             self.cells[p[0]][p[1]] = 1
 
+    def update_cells(self):
+        self.cells = [[0 for _ in xrange(self.num_rows)] for _ in xrange(self.num_cols)]
+        for piece in self.pieces:
+            for pos in piece.positions:
+                self.cells[pos[0]][pos[1]] = 1
+
+
 class Piece():
 
     def __init__(self, positions):
