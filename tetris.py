@@ -78,6 +78,17 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                # Active piece is most recent piece added and the one of which
+                # the player is in control
+                active_piece = board.pieces[-1]
+                if event.key == pygame.K_LEFT:
+                    active_piece.move_left()
+                elif event.key == pygame.K_RIGHT:
+                    active_piece.move_right()
+                board.update_cells()
+
+
 
         if blocks_moved == False:
             generate_new_block(board)
