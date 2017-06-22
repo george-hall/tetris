@@ -81,7 +81,7 @@ def generate_new_block(board):
     piece_types = ["STRAIGHT", "SQUARE"]
     new_piece_type = random.choice(piece_types)
     new_piece_pos = calc_new_piece_pos(new_piece_type, board)
-    board.add_piece(new_piece_pos)
+    board.add_piece(new_piece_pos, new_piece_type)
 
 
 def main():
