@@ -85,7 +85,7 @@ def main():
                 if event.key == pygame.K_LEFT:
                     active_piece.move_left()
                 elif event.key == pygame.K_RIGHT:
-                    active_piece.move_right()
+                    active_piece.move_right(board.num_cols)
                 board.update_cells()
 
 
