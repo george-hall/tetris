@@ -17,6 +17,14 @@ def blank_below(piece, board):
     return True
 
 
+def piece_at_bottom(piece, board):
+    bottom_row = board.num_rows - 1
+    if any(pos[1] == bottom_row for pos in piece.positions):
+        return True
+
+    return False
+
+
 def move_blocks_down(board):
     blocks_moved = False
     for piece in board.pieces:
