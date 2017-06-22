@@ -8,6 +8,9 @@ import graphics
 
 
 def blank_below(piece, board):
+    if piece_at_bottom(piece, board):
+        return False
+
     for pos in piece.positions:
         # Check that the position being examined does not have another position
         # from the same piece directly below
