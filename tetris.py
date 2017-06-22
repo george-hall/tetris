@@ -105,9 +105,11 @@ def main():
                 # the player is in control
                 active_piece = board.pieces[-1]
                 if event.key == pygame.K_LEFT:
-                    active_piece.move_left()
+                    if blank_left(active_piece, board):
+                        active_piece.move_left()
                 elif event.key == pygame.K_RIGHT:
-                    active_piece.move_right(board.num_cols)
+                    if blank_right(active_piece, board):
+                        active_piece.move_right()
                 board.update_cells()
 
 
