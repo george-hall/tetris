@@ -39,9 +39,12 @@ class Piece():
         self.positions = positions
 
     def move_left(self):
-        new_positions = [(p[0]-1, p[1]) for p in self.positions]
-        self.positions = new_positions
+        if not any(p[0] == 0 for p in self.positions):
+            new_positions = [(p[0]-1, p[1]) for p in self.positions]
+            self.positions = new_positions
 
-    def move_right(self):
-        new_positions = [(p[0]+1, p[1]) for p in self.positions]
-        self.positions = new_positions
+    def move_right(self, num_cols):
+        max_col_num = num_cols - 1
+        if not any(p[0] == max_col_num for p in self.positions):
+            new_positions = [(p[0]+1, p[1]) for p in self.positions]
+            self.positions = new_positions
