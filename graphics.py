@@ -4,12 +4,7 @@ import pygame
 
 from colour_defs import *
 
-def draw_square(screen, board, x, y):
-    if board.cells[x][y] == 1:
-        colour = RED
-    else:
-        colour = WHITE
-
+def draw_square(screen, board, (x, y), colour):
     pygame.draw.rect(screen, colour, \
                      [((board.margin + board.square_width) * x) + board.margin, \
                      ((board.margin + board.square_height) * y) + board.margin, \
