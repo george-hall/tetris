@@ -1,3 +1,5 @@
+import colour_defs
+
 class Board():
 
     def __init__(self):
@@ -38,6 +40,7 @@ class Piece():
     def __init__(self, positions, piece_type):
         self.positions = positions
         self.piece_type = piece_type
+        self.colour = colour_defs.calc_colour(self.piece_type)
 
     def move_left(self):
         new_positions = [(p[0]-1, p[1]) for p in self.positions]
