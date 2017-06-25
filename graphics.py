@@ -19,6 +19,5 @@ def draw_piece(screen, board, piece):
 
 def draw_screen(screen, board):
     screen.fill(BLACK)
-    for x in xrange(0, board.num_cols):
-        for y in xrange(0, board.num_rows):
-            draw_square(screen, board, x, y)
+    for piece in board.pieces:
+        draw_piece(screen, board, piece)
